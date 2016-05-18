@@ -1,0 +1,130 @@
+* screen capture 
+
+I use the screen capture tool from spectrwm.
+
+** steps
+
+| steps |                                             |
+|-------+---------------------------------------------|
+|    10 | modify the screenshot.sh                    |
+|       |                                             |
+|    20 | prepare the window to be screenshot         |
+|       |                                             |
+|    30 | press M-S-s                                 |
+|       |                                             |
+|    40 | move the mouse cursor to the target window  |
+|       |                                             |
+|    50 | select the rectangle to be screenshot       |
+|       |                                             |
+|    60 | view the screenshot in chrome automatically |
+|       |                                             |
+
+
+** from manpage
+
+man spectrwm | grep shot
+
+           screenshot_all   screenshot.sh full   # optional
+           screenshot_wind  screenshot.sh window # optional
+           M-s                 screenshot_all
+           M-S-s               screenshot_wind
+           screenshot_all    Take screenshot of entire screen (if enabled) (see PROGRAMS above).
+           screenshot_wind   Take screenshot of selected window (if enabled) (see PROGRAMS above).
+
+
+** from archlinux
+
+https://wiki.archlinux.org/index.php/spectrwm#Screenshots
+
+
+** screenshot.sh
+
+*** my modification
+
+#!/bin/sh
+#
+
+screenshot() {
+	case $1 in
+	full)
+		scrot -m
+		;;
+	window)
+		sleep 1
+#		scrot -s 
+		scrot -s '/tmp/%Y-%m-%d-%k%M_$wx$h.png' -e 'google-chrome-stable $f'
+		;;
+	*)
+		;;
+	esac;
+}
+
+screenshot $1
+
+echo $f
+
+
+*** default
+
+#!/bin/sh
+#
+
+screenshot() {
+	case $1 in
+	full)
+		scrot -m
+		;;
+	window)
+		sleep 1
+		scrot -s 
+		;;
+	*)
+		;;
+	esac;
+}
+
+screenshot $1
+
+echo $f
+
+
+** Advanced Bash-Scripting Guide
+
+*** ;;
+
+Terminator in a case option [double semicolon].
+
+
+http://www.tldp.org/LDP/abs/html/special-chars.html
+
+
+*** case
+
+case (in) / esac
+case "$variable" in 
+
+ "$condition1" ) 
+ command... 
+ ;; 
+
+ "$condition2" ) 
+ command... 
+ ;; 
+
+
+http://www.tldp.org/LDP/abs/html/testbranch.html#CASEESAC1
+
+*** function
+
+
+function_name () { 
+command... 
+} 
+
+http://www.tldp.org/LDP/abs/html/functions.html
+
+
+* git lfs
+
+* git webhost
+
