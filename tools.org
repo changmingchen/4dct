@@ -126,5 +126,25 @@ http://www.tldp.org/LDP/abs/html/functions.html
 
 * git lfs
 
+https://github.com/github/git-lfs/wiki/Tutorial
+
+| functions     | commands              |   |
+|---------------+-----------------------+---|
+| show patterns | git lfs track         |   |
+|               |                       |   |
+| show files    | git lfs ls-files      |   |
+|               |                       |   |
+| show lfs url  | git lfs env           |   |
+|               |                       |   |
+|---------------+-----------------------+---|
+| add pattern   | git lfs track '*.bin' |   |
+|               |                       |   |
+|               | git lfs track '*.gif' |   |
+|               |                       |   |
+|               |                       |   |
+|---------------+-----------------------+---|
+|               |                       |   |
+|               |                       |   |
+
 * git webhost
 
