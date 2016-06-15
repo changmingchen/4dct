@@ -1,11 +1,43 @@
 
-* outlines
+* 4DCT
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: index.html
+  :END:
 
 ** introduction
 
 ** abbreviation
 
 ** website
+
+
+
+| repository    | github service | github pages | github wiki |
+|---------------+----------------+--------------+-------------|
+| default files | readme.org     | index.html   |             |
+|               |                |              |             |
+| branches      | master         | gh-pages     |             |
+|               |                |              |             |
+| url           | reference 1    | reference 2  | reference 3 |
+|               |                |              |             |
+
+
+reference
+
+1
+
+https://github.com/changmingchen/4dct
+
+
+2
+
+http://changmingchen.github.io/4dct
+
+
+3
+
+https://github.com/changmingchen/4dct/wiki
+
 
 ** tools
 
