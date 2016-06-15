@@ -1,11 +1,18 @@
-* github pages
 
-https://pages.github.com/
+* outlines
 
-| step |                                     |
-|------+-------------------------------------|
-|      | go to an existing github repository |
-|      |                                     |
-|      | Create a gh-pages branch            |
-|      |                                     |
-|      |                                     |
+** introduction
+
+** abbreviation
+
+** website
+
+** tools
+
+[[./tools.html][Tools]] that this project uses.
+
+** authors
+
+
+
+

@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>tools</title>
+<!-- 2016-06-15 Wed 10:12 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">tools</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. screen capture</a>
+<ul>
+<li><a href="#sec-1-1">1.1. steps</a></li>
+<li><a href="#sec-1-2">1.2. from manpage</a></li>
+<li><a href="#sec-1-3">1.3. from archlinux</a></li>
+<li><a href="#sec-1-4">1.4. 10 screenshot.sh</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1. my modification</a></li>
+<li><a href="#sec-1-4-2">1.4.2. default</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">1.5. Advanced Bash-Scripting Guide</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1. ;;</a></li>
+<li><a href="#sec-1-5-2">1.5.2. case</a></li>
+<li><a href="#sec-1-5-3">1.5.3. function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-2">2. git lfs</a></li>
+<li><a href="#sec-3">3. orgmode links</a>
+<ul>
+<li><a href="#sec-3-1">3.1. format</a></li>
+<li><a href="#sec-3-2">3.2. link example image</a></li>
+<li><a href="#sec-3-3">3.3. inline images</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> screen capture</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I use the screen capture tool from spectrwm.
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> steps</h3>
+<div class="outline-text-3" id="text-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">steps</th>
+<th scope="col" class="left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">10</td>
+<td class="left">prepare the screenshot.sh</td>
+</tr>
+
+<tr>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="right">20</td>
+<td class="left">prepare the window to be screenshot</td>
+</tr>
+
+<tr>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="right">30</td>
+<td class="left">press M-S-s</td>
+</tr>
+
+<tr>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="right">40</td>
+<td class="left">move the mouse cursor to the target window</td>
+</tr>
+
+<tr>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="right">50</td>
+<td class="left">select the rectangle to be screenshot</td>
+</tr>
+
+<tr>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="right">60</td>
+<td class="left">view the screenshot in chrome automatically</td>
+</tr>
+
+<tr>
+<td class="right">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="right">70</td>
+<td class="left">save the image to a destination folder</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> from manpage</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+man spectrwm | grep shot
+</p>
+
+<p>
+screenshot<sub>all</sub>   screenshot.sh full   # optional
+screenshot<sub>wind</sub>  screenshot.sh window # optional
+M-s                 screenshot<sub>all</sub>
+M-S-s               screenshot<sub>wind</sub>
+screenshot<sub>all</sub>    Take screenshot of entire screen (if enabled) (see PROGRAMS above).
+screenshot<sub>wind</sub>   Take screenshot of selected window (if enabled) (see PROGRAMS above).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> from archlinux</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+<a href="https://wiki.archlinux.org/index.php/spectrwm#Screenshots">https://wiki.archlinux.org/index.php/spectrwm#Screenshots</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 10 screenshot.sh</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> my modification</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+#!/bin/sh
+</p>
+<p>
+screenshot() {
+        case $1 in
+        full)
+                scrot -m
+                ;;
+        window)
+                sleep 1
+#                scrot -s 
+                scrot -s '/tmp/%Y-%m-%d-%k%M_$wx$h.png' -e 'google-chrome-stable $f'
+                ;;
+        *)
+                ;;
+        esac;
+}
+</p>
+
+<p>
+screenshot $1
+</p>
+
+<p>
+echo $f
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> default</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+#!/bin/sh
+</p>
+<p>
+screenshot() {
+        case $1 in
+        full)
+                scrot -m
+                ;;
+        window)
+                sleep 1
+                scrot -s 
+                ;;
+        *)
+                ;;
+        esac;
+}
+</p>
+
+<p>
+screenshot $1
+</p>
+
+<p>
+echo $f
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Advanced Bash-Scripting Guide</h3>
+<div class="outline-text-3" id="text-1-5">
+</div><div id="outline-container-sec-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> ;;</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+Terminator in a case option [double semicolon].
+</p>
+
+
+<p>
+<a href="http://www.tldp.org/LDP/abs/html/special-chars.html">http://www.tldp.org/LDP/abs/html/special-chars.html</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-5-2" class="outline-4">
+<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> case</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<p>
+case (in) / esac
+case "$variable" in 
+</p>
+
+<p>
+"$condition1" ) 
+command&#x2026; 
+;; 
+</p>
+
+<p>
+"$condition2" ) 
+command&#x2026; 
+;; 
+</p>
+
+
+<p>
+<a href="http://www.tldp.org/LDP/abs/html/testbranch.html#CASEESAC1">http://www.tldp.org/LDP/abs/html/testbranch.html#CASEESAC1</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5-3" class="outline-4">
+<h4 id="sec-1-5-3"><span class="section-number-4">1.5.3</span> function</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<p>
+function<sub>name</sub> () { 
+command&#x2026; 
+} 
+</p>
+
+<p>
+<a href="http://www.tldp.org/LDP/abs/html/functions.html">http://www.tldp.org/LDP/abs/html/functions.html</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> git lfs</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://github.com/github/git-lfs/wiki/Tutorial">https://github.com/github/git-lfs/wiki/Tutorial</a>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">functions</th>
+<th scope="col" class="left">commands</th>
+<th scope="col" class="left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">all functions</td>
+<td class="left">git lfs</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">show patterns</td>
+<td class="left">git lfs track</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">git lfs untrack</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">show files</td>
+<td class="left">git lfs ls-files</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">show lfs url</td>
+<td class="left">git lfs env</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">examples</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">add pattern</td>
+<td class="left">git lfs track '*.bin'</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">git lfs track '*.gif'</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> orgmode links</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> format</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<a href="http://orgmode.org/manual/Link-format.html#Link-format">http://orgmode.org/manual/Link-format.html#Link-format</a>
+</p>
+
+
+<p>
+[[link][description] ]
+</p>
+
+<p>
+remove the space between '] ]' at the end of the above line will generate a link in orgmode.
+</p>
+
+
+<p>
+to edit, C-c C-l
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> link example image</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+inline images format
+</p>
+
+
+
+<div class="figure">
+<p><img src="./images/NDMCTSGH.jpg" alt="NDMCTSGH.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> inline images</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+You can run the command `org-toggle-inline-images' with C-c C-x C-v
+</p>
+
+
+<p>
+M-x apropos RET org.*image.*
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2016-06-15 Wed 10:12</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

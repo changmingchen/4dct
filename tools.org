@@ -6,7 +6,7 @@ I use the screen capture tool from spectrwm.
 
 | steps |                                             |
 |-------+---------------------------------------------|
-|    10 | modify the screenshot.sh                    |
+|    10 | prepare the screenshot.sh                   |
 |       |                                             |
 |    20 | prepare the window to be screenshot         |
 |       |                                             |
@@ -18,6 +18,7 @@ I use the screen capture tool from spectrwm.
 |       |                                             |
 |    60 | view the screenshot in chrome automatically |
 |       |                                             |
+|    70 | save the image to a destination folder      |
 
 
 ** from manpage
@@ -37,7 +38,7 @@ man spectrwm | grep shot
 https://wiki.archlinux.org/index.php/spectrwm#Screenshots
 
 
-** screenshot.sh
+** 10 screenshot.sh
 
 *** my modification
 
@@ -130,21 +131,59 @@ https://github.com/github/git-lfs/wiki/Tutorial
 
 | functions     | commands              |   |
 |---------------+-----------------------+---|
+| all functions | git lfs               |   |
+|               |                       |   |
+|               |                       |   |
 | show patterns | git lfs track         |   |
+|               |                       |   |
+|               | git lfs untrack       |   |
+|               |                       |   |
 |               |                       |   |
 | show files    | git lfs ls-files      |   |
 |               |                       |   |
 | show lfs url  | git lfs env           |   |
 |               |                       |   |
 |---------------+-----------------------+---|
+|               | examples              |   |
+|               |                       |   |
 | add pattern   | git lfs track '*.bin' |   |
 |               |                       |   |
 |               | git lfs track '*.gif' |   |
-|               |                       |   |
-|               |                       |   |
-|---------------+-----------------------+---|
-|               |                       |   |
-|               |                       |   |
 
-* git webhost
+
+
+
+
+* orgmode links
+
+** format
+
+http://orgmode.org/manual/Link-format.html#Link-format
+
+
+[[link][description] ]
+
+remove the space between '] ]' at the end of the above line will generate a link in orgmode.
+
+
+to edit, C-c C-l
+
+
+** link example image
+
+
+
+inline images format
+
+
+[[./images/NDMCTSGH.jpg]]
+
+
+** inline images
+
+You can run the command `org-toggle-inline-images' with C-c C-x C-v
+
+
+M-x apropos RET org.*image.*
+
 
